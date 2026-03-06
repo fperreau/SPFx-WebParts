@@ -1,14 +1,12 @@
 # SPFx-WebParts SharePoint project
 
-
-
 [TOC]
 
 ## Introduction
 
-Cet article se compose de deux parties, vous permet dans: 
+Cet article se compose de deux parties, vous permet dans:
 
-- un premier temps, **d'installer les outils** nécessaires à la mise en œuvre **d'un environnement de développement de WebParts SharePoint** sous Windows; 
+- un premier temps, **d'installer les outils** nécessaires à la mise en œuvre **d'un environnement de développement de WebParts SharePoint** sous Windows;
 - un second temps la création **d'un exemple de projet WebPart** utilisé avec l'IDE **vsCode** afin de vous aider lors de **vos développements en JavaScript** et de **vos packaging SPFx** SharePoint.
 
 ## Partie 1 - Déploiement des outils basic & SPFx
@@ -140,8 +138,6 @@ Créez un premier wbepart "welcome" dans un projet "webparts" avec le framework 
 Créez un second webpart "FAQ" dans le même projet "webparts" avec le framework "React".
 > :bulb:**Note:** projet "webparts", webpart: "FAQ", framework: "React"
 
-
-
 ```powershell
 yo @microsoft/sharepoint --global
 
@@ -167,8 +163,6 @@ yo @microsoft/sharepoint --global
  ´   `  |° ´ Y `
 ```
 
-
-
 ### Ajoutez les Certificats de développement pour le projet SPFx
 
 Ajoutez les certificats de développement pour le projet SPFx, ce qui permet de tester et de déployer les WebParts localement.
@@ -177,26 +171,20 @@ Ajoutez les certificats de développement pour le projet SPFx, ce qui permet de 
 heft trust-dev-cert
 ```
 
-
-
 ### Modifiez le tenant SharePoint pour le développement local
 
 Remplacez la variable "**{tenantDomain}**" dans le fichier "**serve.json**" par le nom de votre tenant SharePoint, ce qui permet de servir les WebParts localement et de les tester dans votre environnement SharePoint.
 
 >:bulb:**Note:** Pour Kyndryl, il s'agit de "kyndryl.sharepoint.com"
 
-
-
 ### Modifiez les Manifests des WebParts - Welcome, FAQ
 
 Dans vsCode, modifiez les fichiers de manifeste "./src/webparts/[welcome|faq]/[Welcome|Faq]Webpart.manifest.json" de chaque WebPart : "Welcome" et "FAQ" pour personnaliser la propriété "officeFabricIconFontName".
 
-- **Welcome:** 	"officeFabricIconFontName":"**Comment**" à la place de "Page"
-- **FAQ :** 		"officeFabricIconFontName":"**Info**" à la place de "Page"
+- **Welcome:**  "officeFabricIconFontName":"**Comment**" à la place de "Page"
+- **FAQ :**   "officeFabricIconFontName":"**Info**" à la place de "Page"
 
 Ce changement d'icone vous permet de distinguer plus facilement vos WebParts dans l'interface utilisateur de SharePoint.
-
-
 
 ### Lancez le serveur de développement pour testez vos WebParts
 
@@ -233,30 +221,23 @@ Waiting for changes. Press CTRL + C to exit...
 
 Puis votre navigateur par défaut devrait s'ouvrir automatiquement avec l'URL de test local, où vous pourrez voir et interagir avec vos WebParts "Welcome" et "FAQ" dans l'environnement de développement SharePoint.
 
-### A vous de Jouez
+## A vous de jouez ...
 
-**1. Ne pas chargez les scripts de débogage**
+### Ne pas charger les scripts de débogage
 
 ![image-20260306160641404](img/debug_scripts.png)
 
-
-
-2. **Ajoutez vos deux premières Webparts**
+### Ajoutez vos deux premières Webparts
 
 ![image-20260306162607507](img/add_webparts.png)
 
-
-
-3. **Ajoutez votre WebPart "Welcome" **
+### Ajoutez votre WebPart "Welcome"
 
 ![image-20260306145323434](img/welcome_webpart.png)
 
-
-
-**3. Ajoutez aussi votre WebPart "FAQ"**
+### Ajoutez aussi votre WebPart "FAQ"
 
 ![image-20260306162101829](img/faq_webpart.png)
-
 
 
 <p style="color:blue;text-align:center;font-size:32px;">The End!</p>
