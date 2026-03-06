@@ -11,6 +11,8 @@ Cet article se compose de deux parties, vous permet dans:
 
 ## Partie 1 - Déploiement des outils basic & SPFx
 
+Cette première partie explique comment préparer votre poste de travail Windows pour développer des WebParts SharePoint Framework (SPFx). Vous allez installer et configurer les outils nécessaires (gestionnaire de versions Node.js, Yeoman, générateur SPFx, etc.), puis créer un répertoire de travail prêt à héberger votre projet.
+
 ### Installez le packaging Chocolatey - Administrateur mode
 
 >:bulb: **Note:**  Consulter la documentation officielle de Chocolatey pour l'installation en mode administrateur : [Chocolatey Admin Installation](https://chocolatey.org/install#installing-chocolatey)
@@ -64,7 +66,7 @@ fnm use v22.22.0
 ### Iniitalisez le répertoire de travail Visual Studo Code
 
 Créez un répertoire de travail pour votre projet SPFx et ouvrez-le dans Visual Studio Code, ce qui vous permettra de commencer à développer vos WebParts SharePoint.
-> :memo: **Note:** Créez le répertoire du projet vsCode "SFPx-WebParts et ouvrez-le dans Visual Studio Code, puis ouvrez un terminal PowerShell dans vsCode pour les étapes suivantes.
+> :bulb: **Note:** Créez le répertoire du projet vsCode "SFPx-WebParts et ouvrez-le dans Visual Studio Code, puis ouvrez un terminal PowerShell dans vsCode pour les étapes suivantes.
 
 Ajoutez le répertoire de travail : "webparts"
 
@@ -132,11 +134,18 @@ Installez l'extension **SharePoint Embedded** pour Visual Studio Code, qui offre
 
 Créez un projet WebPart SharePoint en utilisant Yeoman, qui vous guidera à travers les étapes de configuration du projet, telles que le choix du framework (React, No JavaScript Framework, etc.) et la configuration des options de projet.
 
-Créez un premier wbepart "welcome" dans un projet "webparts" avec le framework React.
-> :bulb: **Note:** projet "webparts", webpart: "welcome", framework: "React"
+**Étapes clés après la génération du projet :**
+
+1. Exécutez `gulp trust-dev-cert` pour faire confiance au certificat de développement (nécessaire pour charger des scripts en local).
+2. Lancez `gulp serve --nobrowser` pour démarrer le serveur local.
+3. Ouvrez la Workbench locale dans votre navigateur : `https://localhost:5432/workbench`.
+4. Ajoutez vos WebParts à la page en utilisant l’interface SharePoint Workbench.
+
+Créez un premier webpart "Welcome" dans un projet "webparts" avec le framework React.
+> :bulb: **Note:** projet "webparts", webpart: "Welcome", framework: "React"
 
 Créez un second webpart "FAQ" dans le même projet "webparts" avec le framework "React".
-> :bulb:**Note:** projet "webparts", webpart: "FAQ", framework: "React"
+> :bulb: **Note:** projet "webparts", webpart: "FAQ", framework: "React"
 
 ```powershell
 yo @microsoft/sharepoint --global
@@ -221,13 +230,13 @@ Waiting for changes. Press CTRL + C to exit...
 
 Puis votre navigateur par défaut devrait s'ouvrir automatiquement avec l'URL de test local, où vous pourrez voir et interagir avec vos WebParts "Welcome" et "FAQ" dans l'environnement de développement SharePoint.
 
-## A vous de jouez ...
+## À vous de testez ...
 
 ### Ne pas charger les scripts de débogage
 
 ![image-20260306160641404](img/debug_scripts.png)
 
-### Ajoutez vos deux premières Webparts
+### Ajoutez vos deux premières WebParts
 
 ![image-20260306162607507](img/add_webparts.png)
 
@@ -239,5 +248,8 @@ Puis votre navigateur par défaut devrait s'ouvrir automatiquement avec l'URL de
 
 ![image-20260306162101829](img/faq_webpart.png)
 
+---
+<br>
+<br>
 
-<p style="color:blue;text-align:center;font-size:32px;">The End!</p>
+<h2 style="color:blue;font-size:32px;text-align:center;">The End !</h2>
